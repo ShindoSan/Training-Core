@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="0f7858ffc3903210c9043eec05013136" label="Training Schedule" max_length="40" name="x_1092529_traini_0_training_schedule" type="collection">
+        <element label="Instructor" max_length="32" name="instructor" reference="sys_user" type="reference"/>
+        <element label="Training Date" max_length="40" name="training_date" type="glide_date"/>
+        <element label="Training" max_length="32" name="training" reference="x_1092529_traini_0_training" type="reference"/>
+        <element label="Vacancies" max_length="40" name="vacancies" type="integer"/>
+        <index name="index">
+            <element name="instructor"/>
+        </index>
+        <index name="index2">
+            <element name="training"/>
+        </index>
+    </element>
+</database>

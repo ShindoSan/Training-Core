@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="cf2c5037c3d03210c9043eec0501319f" extends="task" label="Inscription" max_length="40" name="x_1092529_traini_0_inscription" type="collection">
+        <element label="Reason for Rejection" max_length="250" name="reason_for_rejection" type="string"/>
+        <element label="Training Schedule" max_length="32" name="training_schedule" reference="x_1092529_traini_0_training_schedule" type="reference"/>
+        <element label="Approver" max_length="32" name="approver" reference="sys_user" type="reference"/>
+        <element label="Manually Added By Admin" max_length="40" name="manually_added_by_admin" type="boolean"/>
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+    </element>
+</database>
