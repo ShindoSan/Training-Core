@@ -3,7 +3,8 @@
         <element label="Instructor" max_length="32" name="instructor" reference="sys_user" type="reference"/>
         <element label="Training Date" max_length="40" name="training_date" type="glide_date"/>
         <element label="Training" max_length="32" name="training" reference="x_1092529_traini_0_training" type="reference"/>
-        <element label="Vacancies" max_length="40" name="vacancies" type="integer"/>
+        <element label="Remaining Vacancies" max_length="255" name="remaining_vacancies" type="integer"/>
+        <element label="Vacancies (total)" max_length="40" name="vacancies" type="integer"/>
         <index name="index">
             <element name="instructor"/>
         </index>

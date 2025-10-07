@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Training Core">da828933c3943210c9043eec050131b3</sc_cat_item>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-07 00:06:04</sys_created_on>
+        <sys_id>ba67c13bc3943210c9043eec05013185</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.Training Core</sys_name>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_ba67c13bc3943210c9043eec05013185</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-07 00:06:04</sys_updated_on>
+    </sc_cat_item_catalog>
+</record_update>
