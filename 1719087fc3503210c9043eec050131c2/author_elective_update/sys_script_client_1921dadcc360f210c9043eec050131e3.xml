@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>training_date</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Validate Training  Duplicity and Data</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    g_form.hideFieldMsg("training_date");
+    g_form.clearMessages();
+
+    var trainingSysId = g_form.getValue("training");
+    if (trainingSysId === '') {
+        return;
+    }
+
+    var ga = new GlideAjax("TrainingScheduleUtils");
+    ga.addParam("sysparm_name", "checkDuplicate");
+    ga.addParam("sysparm_training", trainingSysId);
+    ga.addParam("sysparm_start_date", newValue);
+
+    ga.getXML(processAnswer);
+
+    function processAnswer(response) {
+        var answer = response.responseXML.documentElement.getAttribute("answer");
+
+        if (answer === "date_invalid") {
+            g_form.clearValue("training_date");
+            g_form.showFieldMsg("training_date", "Please select a future date.", "error");
+        } else if (answer === "true") {
+            g_form.clearValue("training_date");
+            g_form.showFieldMsg("training_date", "A duplicate training course already exists on this date. Please select a different date.", "error");
+        }
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-08 19:08:53</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1921dadcc360f210c9043eec050131e3</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>Validate Training  Duplicity and Data</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name>sys_script_client_1921dadcc360f210c9043eec050131e3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-09 01:28:52</sys_updated_on>
+        <table>x_1092529_traini_0_training_schedule</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Training Core">1719087fc3503210c9043eec050131c2</application>
+        <file_path/>
+        <instance_id>da069ff1eb68d2d4e483f459bad0cdc9</instance_id>
+        <instance_name>dev288635</instance_name>
+        <name>sys_script_client_1921dadcc360f210c9043eec050131e3</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;training_date&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Validate Training  Duplicity and Data&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    g_form.hideFieldMsg("training_date");
+    g_form.clearMessages();
+
+    var trainingSysId = g_form.getValue("training");
+    if (trainingSysId === '') {
+        return;
+    }
+
+    var ga = new GlideAjax("TrainingScheduleUtils");
+    ga.addParam("sysparm_name", "checkDuplicate");
+    ga.addParam("sysparm_training", trainingSysId);
+    ga.addParam("sysparm_start_date", newValue);
+
+    ga.getXML(processAnswer);
+
+    function processAnswer(response) {
+        var answer = response.responseXML.documentElement.getAttribute("answer");
+
+        if (answer === "date_invalid") {
+            g_form.clearValue("training_date");
+            g_form.showFieldMsg("training_date", "Please select a future date.", "error");
+        } else if (answer === "true") {
+            g_form.clearValue("training_date");
+            g_form.showFieldMsg("training_date", "A duplicate training course already exists on this date. Please select a different date.", "error");
+        }
+    }
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-10-08 19:08:53&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;1921dadcc360f210c9043eec050131e3&lt;/sys_id&gt;&lt;sys_mod_count&gt;19&lt;/sys_mod_count&gt;&lt;sys_name&gt;Validate Training  Duplicity and Data&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Training Core" source="x_1092529_traini_0"&gt;1719087fc3503210c9043eec050131c2&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Training Core"&gt;1719087fc3503210c9043eec050131c2&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_1921dadcc360f210c9043eec050131e3&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-10-09 01:28:52&lt;/sys_updated_on&gt;&lt;table&gt;x_1092529_traini_0_training_schedule&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>2007800207</payload_hash>
+        <record_name>Validate Training  Duplicity and Data</record_name>
+        <reverted_from/>
+        <source>8a116c3bc3d03210c9043eec05013186</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-09 01:28:52</sys_created_on>
+        <sys_id>878d6754c328f210c9043eec0501315d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>199c695d4a10000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-09 01:28:52</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>0f8d67548628f210b36cb0a11d7e8b5c</update_guid>
+        <update_guid_history>0f8d67548628f210b36cb0a11d7e8b5c:2007800207,5bf6a794e228f210005344b07ca8c84a:-1861582308,8fd56fd05128f210a46096b4fa736868:-964992695,e863ef50a728f210fa84b93891dfd2be:191677405,0ac1afdcbfe4f210263c3ddab0f859ff:-795982680,6e50a75cace4f21020e4918ee6e135bf:-593253212,76bf5f1cf3e4f2104fcf07751865e406:499178567,457e1fd880e4f2104dedb151075de733:411711568,704ed7d835e4f210b1e33a09b729d894:-256090654,b22cd350d3e4f210748fb5bb767028a5:-381300554,f0b5935049e4f210181268f203b1c41a:-1399511860,4905dfdc46a4f210c8c0ebca80053839:1031971338,996f4bd011a4f2103fc72f04c4d3bbed:-1712466222,87090f50e6a4f2102cfd5f7d3bd0e2b4:835575788,ab5643d8a764f210ebf59b5c6077a0f0:436420284,3a634b58a864f210e85045d91ef145c2:406514952,4ea18794b464f210f34810d1d62a8d71:-646508412,740a9258a5a0f21066b5478d0ebdf5eb:-227711665,17189ad435a0f210ee1697faec15f4ef:-614777999,b0961294b4a0f2108afa0c79209bc9eb:291715159</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-09 05:39:06</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>7fdca749246647a7b12a4785cad17b99</sys_id>
+        <sys_metadata>1921dadcc360f210c9043eec050131e3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Validate Training  Duplicity and Data</sys_name>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_parent display_value="Training Schedule">0f7858ffc3903210c9043eec05013136</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_scope_delete display_value="">07ff8369c044408288488749091a7349</sys_scope_delete>
+        <sys_update_name>sys_script_client_1921dadcc360f210c9043eec050131e3</sys_update_name>
+        <sys_update_version display_value="sys_script_client_1921dadcc360f210c9043eec050131e3">878d6754c328f210c9043eec0501315d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-09 05:39:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

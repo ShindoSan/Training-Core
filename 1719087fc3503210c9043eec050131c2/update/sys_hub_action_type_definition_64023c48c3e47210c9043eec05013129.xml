@@ -14,7 +14,7 @@
         <copied_from_name/>
         <description>This action calls the external API to translate text.</description>
         <flow_priority/>
-        <ih_action>true</ih_action>
+        <ih_action>false</ih_action>
         <internal_name>integration_rapid_api</internal_name>
         <label_cache>[{"name":"{{action.description}}","label":"action➛Description Text","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceUiUniqueId":"","sourceType":"","uiType":"string","uiUniqueId":"5332f2c5-00ab-4c49-a036-fee24441449f"}},{"name":"{{action.descrition_text}}","label":"action➛Descrition Text","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.description_text}}","label":"action➛Description Text","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[867a2eb9-b8e0-4c79-b13d-00942efe503d].endpoint}}","label":"step➛Script step➛endpoint","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"e9b23ffb-d1f9-4cfe-b208-db5427a60f4d"}},{"name":"{{step[867a2eb9-b8e0-4c79-b13d-00942efe503d].apikey}}","label":"step➛Script step➛apikey","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"4c6c1731-b22a-4d7c-8b43-dbbfc54769ce"}},{"name":"{{step[7c21a613-c3d7-4a16-b1c2-1975dc357ff7].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[7c21a613-c3d7-4a16-b1c2-1975dc357ff7].status_code}}","label":"step➛REST step➛Status Code","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[7c21a613-c3d7-4a16-b1c2-1975dc357ff7].error_code}}","label":"step➛REST step➛Error Code","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[d356dc15-8339-414c-9ffc-91c55069d85b].__step_status__.code}}","label":"step➛JSON Parser step➛Step Status➛Code","type":"step","ref":"","reference_display":"","base_type":"integer","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[d356dc15-8339-414c-9ffc-91c55069d85b].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD23ec344831287210fb673be2758872ea","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"c5365e03-0a36-47fc-b422-191394714c22"}},{"name":"{{step[d356dc15-8339-414c-9ffc-91c55069d85b].root.translatedText}}","label":"step➛JSON Parser step➛root➛translatedText","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[867a2eb9-b8e0-4c79-b13d-00942efe503d].sourcelang}}","label":"step➛Script step➛sourcelang","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"52adf5f4-29fc-4935-84e0-5be40fb8148e"}},{"name":"{{step[867a2eb9-b8e0-4c79-b13d-00942efe503d].targetlang}}","label":"step➛Script step➛targetlang","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"ff4d5624-99f9-4d0b-9819-e67ad4661c13"}},{"name":"{{step[867a2eb9-b8e0-4c79-b13d-00942efe503d].text}}","label":"step➛Script step➛text","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"58f94cb2-fb4d-4bd3-a657-e2f0e3a46b33"}}]</label_cache>
         <master_snapshot>1f2fa544c32c7210c9043eec05013105</master_snapshot>
@@ -24,14 +24,14 @@
         <outputs/>
         <outputs/>
         <pre_compiled>false</pre_compiled>
-        <state>published</state>
+        <state>draft</state>
         <sys_class_name>sys_hub_action_type_definition</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-10-07 17:11:01</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>64023c48c3e47210c9043eec05013129</sys_id>
-        <sys_mod_count>69</sys_mod_count>
+        <sys_mod_count>71</sys_mod_count>
         <sys_name>Integration Rapid Api </sys_name>
         <sys_overrides/>
         <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_64023c48c3e47210c9043eec05013129</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-08 00:58:24</sys_updated_on>
+        <sys_updated_on>2025-10-09 12:13:40</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -1264,7 +1264,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>27ec3448c3287210c9043eec050131ea</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -1272,7 +1272,7 @@
         <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-08 00:58:22</sys_updated_on>
+        <sys_updated_on>2025-10-09 12:13:40</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -1708,14 +1708,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-10-07 17:17:04</sys_created_on>
         <sys_id>d963fc4cc3e47210c9043eec0501311c</sys_id>
-        <sys_mod_count>85</sys_mod_count>
+        <sys_mod_count>87</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-08 00:58:22</sys_updated_on>
+        <sys_updated_on>2025-10-09 12:13:40</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1743,7 +1743,7 @@
     </sys_hub_action_status_metadata>
     <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=9163fc4cc3e47210c9043eec05013129^sys_idNOT IN525fc24cc3ac7210c9043eec05013162,9a5fc24cc3ac7210c9043eec05013161"/>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
-        <action_status_metadata_id display_value="Created 07/10/2025 14:17:05">9163fc4cc3e47210c9043eec05013129</action_status_metadata_id>
+        <action_status_metadata_id display_value="Created 2025-10-07 14:17:05">9163fc4cc3e47210c9043eec05013129</action_status_metadata_id>
         <condition>{{step[7c21a613-c3d7-4a16-b1c2-1975dc357ff7].error_code}}=1</condition>
         <dont_treat_as_error>true</dont_treat_as_error>
         <label>Rapid Step Failure</label>
@@ -1757,7 +1757,7 @@
         <sys_updated_on>2025-10-07 23:58:49</sys_updated_on>
     </sys_hub_status_condition>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
-        <action_status_metadata_id display_value="Created 07/10/2025 14:17:05">9163fc4cc3e47210c9043eec05013129</action_status_metadata_id>
+        <action_status_metadata_id display_value="Created 2025-10-07 14:17:05">9163fc4cc3e47210c9043eec05013129</action_status_metadata_id>
         <condition>{{step[d356dc15-8339-414c-9ffc-91c55069d85b].__step_status__.code}}=1</condition>
         <dont_treat_as_error>true</dont_treat_as_error>
         <label>Parse Step Failure</label>
@@ -3594,7 +3594,7 @@
     </sys_hub_action_status_metadata>
     <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=632fa544c32c7210c9043eec0501316c^sys_idNOT IN47fc5a8cc3ec7210c9043eec05013175,c7fc5a8cc3ec7210c9043eec05013175"/>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
-        <action_status_metadata_id display_value="Created 07/10/2025 18:38:17">632fa544c32c7210c9043eec0501316c</action_status_metadata_id>
+        <action_status_metadata_id display_value="Created 2025-10-07 18:38:17">632fa544c32c7210c9043eec0501316c</action_status_metadata_id>
         <condition>{{step[d356dc15-8339-414c-9ffc-91c55069d85b].__step_status__.code}}=1</condition>
         <dont_treat_as_error>true</dont_treat_as_error>
         <label>Parse Step Failure</label>
@@ -3608,7 +3608,7 @@
         <sys_updated_on>2025-10-08 00:58:24</sys_updated_on>
     </sys_hub_status_condition>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
-        <action_status_metadata_id display_value="Created 07/10/2025 18:38:17">632fa544c32c7210c9043eec0501316c</action_status_metadata_id>
+        <action_status_metadata_id display_value="Created 2025-10-07 18:38:17">632fa544c32c7210c9043eec0501316c</action_status_metadata_id>
         <condition>{{step[7c21a613-c3d7-4a16-b1c2-1975dc357ff7].error_code}}=1</condition>
         <dont_treat_as_error>true</dont_treat_as_error>
         <label>Rapid Step Failure</label>

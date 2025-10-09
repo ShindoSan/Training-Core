@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
+    <io_set_item action="DELETE">
+        <order>200</order>
+        <sc_cat_item display_value="Training Core">da828933c3943210c9043eec050131b3</sc_cat_item>
+        <sys_class_name>io_set_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-09 06:48:12</sys_created_on>
+        <sys_id>bca67ca4c3acf210c9043eec050131a9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Training Details.Training Core</sys_name>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name>io_set_item_bca67ca4c3acf210c9043eec050131a9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-09 06:48:13</sys_updated_on>
+        <variable_set display_value="Training Details">3976b8a4c3acf210c9043eec0501310c</variable_set>
+    </io_set_item>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Training Core">1719087fc3503210c9043eec050131c2</application>
+        <file_path/>
+        <instance_id>da069ff1eb68d2d4e483f459bad0cdc9</instance_id>
+        <instance_name>dev288635</instance_name>
+        <name>io_set_item_bca67ca4c3acf210c9043eec050131a9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item"><io_set_item action="INSERT_OR_UPDATE"><order>200</order><sc_cat_item display_value="Training Core">da828933c3943210c9043eec050131b3</sc_cat_item><sys_class_name>io_set_item</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-10-09 06:48:12</sys_created_on><sys_id>bca67ca4c3acf210c9043eec050131a9</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Training Details.Training Core</sys_name><sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package><sys_policy/><sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope><sys_update_name>io_set_item_bca67ca4c3acf210c9043eec050131a9</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-10-09 06:48:13</sys_updated_on><variable_set display_value="Training Details">3976b8a4c3acf210c9043eec0501310c</variable_set></io_set_item></record_update>]]></payload>
+        <payload_hash>1322219680</payload_hash>
+        <record_name>Training Details.Training Core</record_name>
+        <reverted_from/>
+        <source>8a116c3bc3d03210c9043eec05013186</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-09 06:48:14</sys_created_on>
+        <sys_id>5da67ca4c3acf210c9043eec050131bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>199c7ba382e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-09 06:48:14</sys_updated_on>
+        <type>Catalog Variable Set</type>
+        <update_guid>51a67ca4b1acf210ec6243a2b9087abc</update_guid>
+        <update_guid_history>51a67ca4b1acf210ec6243a2b9087abc:1322219680</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Training Details.Training Core">97773028c3acf210c9043eec05013148</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-09 06:51:55</sys_created_on>
+        <sys_db_object display_value="" name="io_set_item">io_set_item</sys_db_object>
+        <sys_id>2ec06d2372634b64b313c90e25458fc4</sys_id>
+        <sys_metadata>bca67ca4c3acf210c9043eec050131a9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Training Details.Training Core</sys_name>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_scope_delete display_value="">07ff8369c044408288488749091a7349</sys_scope_delete>
+        <sys_update_name>io_set_item_bca67ca4c3acf210c9043eec050131a9</sys_update_name>
+        <sys_update_version display_value="io_set_item_bca67ca4c3acf210c9043eec050131a9">5da67ca4c3acf210c9043eec050131bc</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-09 06:51:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

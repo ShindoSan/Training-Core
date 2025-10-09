@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1092529_traini_0.TrainingScheduleUtils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>TrainingScheduleUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var TrainingScheduleUtils = Class.create();
+TrainingScheduleUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    checkDuplicateSchedule: function() {
+        var training = this.getParameter('sysparm_training');
+        var startDate = this.getParameter('sysparm_start_date');
+        var grSchedule = new GlideRecord("x_1092529_traini_0_training_schedule");
+        grSchedule.addEncodedQuery("training=" + training + "^training_dateON" + startDate + "@javascript:gs.dateGenerate('" + startDate + "','start')@javascript:gs.dateGenerate('" + startDate + "','end')");
+        grSchedule.setLimit(1);
+        grSchedule.query();
+
+        if (grSchedule.next()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    },
+
+
+
+    buscaMembrosDoGrupo: function(grupoId) {
+        var membersArray = [];
+        var grGroupMember = new GlideRecord("sys_user_grmember");
+        grGroupMember.addQuery("group", grupoId);
+        grGroupMember.query();
+        while (grGroupMember.next()) {
+            membersArray.push(grGroupMember.getValue('user'));
+        }
+
+        return 'sys_idIN' + membersArray.toString();
+
+    },
+
+checkTrainingDate: function() {
+    var trainingDateStr = this.getParameter('sysparm_start_date');
+
+    var gDate = new GlideDate();
+    gDate.setValue(trainingDateStr);
+
+    var today = new GlideDate();
+    today.addDays(2);
+
+    if (gDate.before(today)) {
+        return 'date_invalid';
+    }
+	return 'date_valid';
+},
+
+
+    type: 'TrainingScheduleUtils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-08 07:48:08</sys_created_on>
+        <sys_id>1b2a730cc3a4b210c9043eec0501318d</sys_id>
+        <sys_mod_count>50</sys_mod_count>
+        <sys_name>TrainingScheduleUtils</sys_name>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name>sys_script_include_1b2a730cc3a4b210c9043eec0501318d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-09 05:48:53</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="DELETE">
+        <id>1b2a730cc3a4b210c9043eec0501318d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-08 07:48:08</sys_created_on>
+        <sys_id>fcca334cc3a4b210c9043eec05013107</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-08 07:48:08</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Training Core">1719087fc3503210c9043eec050131c2</application>
+        <file_path/>
+        <instance_id>da069ff1eb68d2d4e483f459bad0cdc9</instance_id>
+        <instance_name>dev288635</instance_name>
+        <name>sys_script_include_1b2a730cc3a4b210c9043eec0501318d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1092529_traini_0.TrainingScheduleUtils&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;TrainingScheduleUtils&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var TrainingScheduleUtils = Class.create();
+TrainingScheduleUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    checkDuplicateSchedule: function() {
+        var training = this.getParameter('sysparm_training');
+        var startDate = this.getParameter('sysparm_start_date');
+        var grSchedule = new GlideRecord("x_1092529_traini_0_training_schedule");
+        grSchedule.addEncodedQuery("training=" + training + "^training_dateON" + startDate + "@javascript:gs.dateGenerate('" + startDate + "','start')@javascript:gs.dateGenerate('" + startDate + "','end')");
+        grSchedule.setLimit(1);
+        grSchedule.query();
+
+        if (grSchedule.next()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    },
+
+
+
+    buscaMembrosDoGrupo: function(grupoId) {
+        var membersArray = [];
+        var grGroupMember = new GlideRecord("sys_user_grmember");
+        grGroupMember.addQuery("group", grupoId);
+        grGroupMember.query();
+        while (grGroupMember.next()) {
+            membersArray.push(grGroupMember.getValue('user'));
+        }
+
+        return 'sys_idIN' + membersArray.toString();
+
+    },
+
+checkTrainingDate: function() {
+    var trainingDateStr = this.getParameter('sysparm_start_date');
+
+    var gDate = new GlideDate();
+    gDate.setValue(trainingDateStr);
+
+    var today = new GlideDate();
+    today.addDays(2);
+
+    if (gDate.before(today)) {
+        return 'date_invalid';
+    }
+	return 'date_valid';
+},
+
+
+    type: 'TrainingScheduleUtils'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-10-08 07:48:08&lt;/sys_created_on&gt;&lt;sys_id&gt;1b2a730cc3a4b210c9043eec0501318d&lt;/sys_id&gt;&lt;sys_mod_count&gt;50&lt;/sys_mod_count&gt;&lt;sys_name&gt;TrainingScheduleUtils&lt;/sys_name&gt;&lt;sys_package display_value="Training Core" source="x_1092529_traini_0"&gt;1719087fc3503210c9043eec050131c2&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Training Core"&gt;1719087fc3503210c9043eec050131c2&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_1b2a730cc3a4b210c9043eec0501318d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-10-09 05:48:53&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;1b2a730cc3a4b210c9043eec0501318d&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-10-08 07:48:08&lt;/sys_created_on&gt;&lt;sys_id&gt;fcca334cc3a4b210c9043eec05013107&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-10-08 07:48:08&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_include&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>800855552</payload_hash>
+        <record_name>TrainingScheduleUtils</record_name>
+        <reverted_from/>
+        <source>8a116c3bc3d03210c9043eec05013186</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-09 05:48:53</sys_created_on>
+        <sys_id>bf09a860c36cf210c9043eec05013184</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>199c783e2e20000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-09 05:48:53</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>3709a8600f6cf21059d2d6d8bb600384</update_guid>
+        <update_guid_history>3709a8600f6cf21059d2d6d8bb600384:800855552,ecf8ac20b66cf210a40215760ce237c5:-1947294566,a76537543868f2106607db7f5271076a:-2012203232,088377d00868f210be9ff5a768b800e1:686825600,2bd2f3d08568f2107164d8abc039c13f:-1014469088,37d1f3d09c68f210e44adc5e1bc3013a:-1218946588,ccb1b390b268f210ddc507f7c675477a:559087840,61f0779c4728f210b251f95735172cc4:1300962720,e550ff10b768f2108505f445baee4222:254792996,e8cfeb108568f210bf7f5ae498e0e660:1417129329,ae9fe7dc8c28f210d1ac340c23c225dd:-1050363981,1cbeab942b28f210547e3f5204d26fa1:1300991835,ddcd679c3928f21055a562ef951b1363:-138205583,990de3180128f210e036532d4a75acf3:1887445797,8578a7942128f2104536abf9a2c0e4e9:-1295911180,db15ef507428f210b179b8af0d06bfc7:2014618981,b2a46f10e428f210bc6daf44344d3b81:2079525415,5124a3501d28f21008ba1e2650cf006a:6256283,3d92ebdcd0e4f2108f1c51611a75bf92:657348281,95a0e39cf1e4f210850a13452794fa0b:-400406341,218d1f58ace4f210430b5e0d9f9639af:476888634,5dba93d41ee4f210ef601af90ea4a94e:-817329712,775793d078e4f210fd41e151a0ceb5b6:1723780409,98b457dc0ea4f210fe25f9e470babdb2:1344605760,88c31f5c82a4f21067ff524f1cfeb517:1463123194,aacacbd030a4f210e5a6e853fbef1b3b:308404263,a86ac7d058a4f210f152097664a7446d:-937901749,fb77cbdcf664f2109ed451a1cc7a510e:-391771989,66c54f5c5364f210474179f223b45cfb:-1632917794,0d634b585364f210c21bb2b759eadc69:1070792429,cb224b584c64f2105b4d08064e28ea62:-677847042,579e7e508164f210f110a22790c06cd3:1753820387,1c5cb6504164f2105a776c04107d12e9:-72822815,e820ea50a9e0f210067287cf4c7ea2d1:-1729155937,31de5edc4aa0f210e5bc5592da4a67a8:280577948,0b9ed6dcaba0f210490934a8633ddee3:1980838263,df0e92dc9ba0f210d90f7175e48cb408:1035740661,123d529cdba0f210486acf86292b4d08:1076809321,edda5a9401a0f210177f9b5d1c6b7b1d:-131878697,9468ded44aa0f2108d6d9ab2cad7c166:1287001262,7ee7d29427a0f210ed4deb055f642916:1344132982,99ef829c4060f2108fb2eef1914e3c80:-651551804,e74f82544c60f21065235577793b75b5:-1987518545,9cf14a14b620f2104d67345c67f663a4:-1258615550,bdbd0910196cb210b8655abfe2d104fb:1523382436,4b518d5c01e8b210785695dfb0a7e12b:-1163088008,bf25c098dee4b210b5a3790925555e9f:1917332282,0fe00450cae4b210af4ee2e9e7119e89:2121887641,4dca730c51a4b2104acf68847535d793:-1515508965</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-09 05:50:42</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>3a8f69ed101c447eb2bc4509cdf4bf19</sys_id>
+        <sys_metadata>1b2a730cc3a4b210c9043eec0501318d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TrainingScheduleUtils</sys_name>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_scope_delete display_value="">07ff8369c044408288488749091a7349</sys_scope_delete>
+        <sys_update_name>sys_script_include_1b2a730cc3a4b210c9043eec0501318d</sys_update_name>
+        <sys_update_version display_value="sys_script_include_1b2a730cc3a4b210c9043eec0501318d">bf09a860c36cf210c9043eec05013184</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-09 05:50:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1092529_traini_0.TrainingUtils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>TrainingUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var TrainingUtils = Class.create();
+TrainingUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    checkDuplicateSchedule: function() {
+        //gs.info("ryuki: entrou na funcao");
+        var training = this.getParameter('sysparm_training');
+        var startDate = this.getParameter('sysparm_start_date');
+        //gs.info("ryuki curso: " + training);
+        //gs.info("ryuki data: "+ startDate);
+        var grSchedule = new GlideRecord("x_1092529_traini_0_training_schedule");
+        grSchedule.addEncodedQuery("training=" + training + "^training_dateON" + startDate + "@javascript:gs.dateGenerate('" + startDate + "','start')@javascript:gs.dateGenerate('" + startDate + "','end')");
+        grSchedule.setLimit(1);
+        grSchedule.query();
+
+        if (grSchedule.next()) {
+            // gs.info("ryuki: entrou no if");
+            // gs.info("ryuki: data do gliderecord: "+ grSchedule.training_date);
+            return true;
+        } else {
+            // gs.info("ryuki: entrou no else");
+            return false;
+        }
+
+    },
+
+    getGroupMembers: function(groupID) {
+        var membersArray = [];
+        var grGroupMember = new GlideRecord("sys_user_grmember");
+        grGroupMember.addQuery("group", groupID);
+        grGroupMember.query();
+        while (grGroupMember.next()) {
+            membersArray.push(grGroupMember.getValue('user'));
+        }
+        return membersArray.toString();
+    },
+
+    checkScheduleEntry: function() {
+        var schedule = this.getParameter('sysparm_training_schedule');
+        var userId = this.getParameter('sysparm_userid');
+
+        var grScheduleEntry = new GlideRecord("x_1092529_traini_0_inscription");
+        grScheduleEntry.addEncodedQuery("training_schedule=" + schedule + "^user=" + userId);
+        grScheduleEntry.query();
+
+        if (grScheduleEntry.next()) {
+            var results = {
+				"registered": "true",
+                "state": grScheduleEntry.getDisplayValue("state")
+            };
+            return JSON.stringify(results);
+        } else {
+            return null;
+        }
+    },
+
+    type: 'TrainingUtils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-09 05:51:59</sys_created_on>
+        <sys_id>b489a024c36cf210c9043eec05013121</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>TrainingUtils</sys_name>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name>sys_script_include_b489a024c36cf210c9043eec05013121</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-09 15:12:54</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>b489a024c36cf210c9043eec05013121</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-09 05:51:59</sys_created_on>
+        <sys_id>d1c9a824c36cf210c9043eec0501314f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-09 05:51:59</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

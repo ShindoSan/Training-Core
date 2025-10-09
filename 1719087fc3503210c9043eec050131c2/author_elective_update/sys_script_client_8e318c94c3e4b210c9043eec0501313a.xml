@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>training_date</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Validate Training Date</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var ga = new GlideAjax('TrainingScheduleUtils');
+
+    ga.addParam('sysparm_name', 'checkTrainingDate');
+    
+    ga.addParam('sysparm_training_date', newValue);
+    
+    ga.getXML(ajaxResponse);
+    
+    function ajaxResponse(response) {
+        var answer = response.responseXML.documentElement.getAttribute("answer");
+
+        if (answer === 'date_invalid') {
+            g_form.setValue('training_date', '');
+            g_form.showFieldMsg('training_date', 'The course date cannot be in the past, today, or tomorrow. Please select a future date.', 'error');
+        }
+    }
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-08 08:25:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8e318c94c3e4b210c9043eec0501313a</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Validate Training Date</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name>sys_script_client_8e318c94c3e4b210c9043eec0501313a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-08 13:25:26</sys_updated_on>
+        <table>x_1092529_traini_0_training_schedule</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Training Core">1719087fc3503210c9043eec050131c2</application>
+        <file_path/>
+        <instance_id>da069ff1eb68d2d4e483f459bad0cdc9</instance_id>
+        <instance_name>dev288635</instance_name>
+        <name>sys_script_client_8e318c94c3e4b210c9043eec0501313a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;training_date&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Validate Training Date&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var ga = new GlideAjax('TrainingScheduleUtils');
+
+    ga.addParam('sysparm_name', 'checkTrainingDate');
+    
+    ga.addParam('sysparm_training_date', newValue);
+    
+    ga.getXML(ajaxResponse);
+    
+    function ajaxResponse(response) {
+        var answer = response.responseXML.documentElement.getAttribute("answer");
+
+        if (answer === 'date_invalid') {
+            g_form.setValue('training_date', '');
+            g_form.showFieldMsg('training_date', 'The course date cannot be in the past, today, or tomorrow. Please select a future date.', 'error');
+        }
+    }
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-10-08 08:25:48&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;8e318c94c3e4b210c9043eec0501313a&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_name&gt;Validate Training Date&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Training Core" source="x_1092529_traini_0"&gt;1719087fc3503210c9043eec050131c2&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Training Core"&gt;1719087fc3503210c9043eec050131c2&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_8e318c94c3e4b210c9043eec0501313a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-10-08 13:25:26&lt;/sys_updated_on&gt;&lt;table&gt;x_1092529_traini_0_training_schedule&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-514227894</payload_hash>
+        <record_name>Validate Training Date</record_name>
+        <reverted_from/>
+        <source>8a116c3bc3d03210c9043eec05013186</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-08 13:25:26</sys_created_on>
+        <sys_id>0ef74958c32cb210c9043eec05013100</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>199c3ff852a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-08 13:25:26</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>82f74958b82cb21011508dddf8adbe00</update_guid>
+        <update_guid_history>82f74958b82cb21011508dddf8adbe00:-514227894,fef68590372cb2107080c9bb41eaea9f:-1499178513,27b60118692cb2103ae89330b56c1ee9:-2115760013,3236481c1ae4b210de0797f89ad2122e:345599574,c685cc98dee4b210f2f30c52b2f9222d:-1924290513,90a48c9860e4b210a89b0371e3e0ee58:-2006376883,e06308945be4b2101e4200aaffa5f664:1804426505</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-08 13:29:35</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>027963a54b3d4ed8a026b95e6ae83b90</sys_id>
+        <sys_metadata>8e318c94c3e4b210c9043eec0501313a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Validate Training Date</sys_name>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_parent display_value="Training Schedule">0f7858ffc3903210c9043eec05013136</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_scope_delete display_value="">07ff8369c044408288488749091a7349</sys_scope_delete>
+        <sys_update_name>sys_script_client_8e318c94c3e4b210c9043eec0501313a</sys_update_name>
+        <sys_update_version display_value="sys_script_client_8e318c94c3e4b210c9043eec0501313a">0ef74958c32cb210c9043eec05013100</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-08 13:29:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
