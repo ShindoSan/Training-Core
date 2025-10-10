@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=4903000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Used to calculate and update vacancies spots</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>update_vacancies_remaining</internal_name>
+        <label_cache>[{"name":"subflow.admin_added","label":"Input➛admin_added","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","usedInstances":{"053cb89c-5651-4133-92b8-ff64d6cec544":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"0211ad72-3f51-42f7-949d-df4e104bddea"}},{"name":"subflow.inscription.training_schedule","label":"Input➛Inscription➛Training Schedule","reference":"x_1092529_traini_0_training_schedule","reference_display":"Training Schedule","type":"reference","base_type":"reference","parent_table_name":"x_1092529_traini_0_inscription","column_name":"training_schedule","usedInstances":{"303a03b5-3c78-40ff-9977-86a40e0f54c0":["record"],"86044473-c1a0-4427-9832-2a3faf4bd2c3":["record"],"6144ca1c-8cb4-4696-bf62-a89ff91d0e21":["conditions"],"b48ab59e-53ac-4ebc-b817-267f71aaebdb":["record"]}},{"name":"subflow.inscription.state","label":"Input➛Inscription➛State","reference":"","reference_display":"State","type":"choice","base_type":"choice","parent_table_name":"x_1092529_traini_0_inscription","column_name":"state","choices":[{"image":"","label":"Approved","used":false,"reference":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"61","parameters":{"name":"x_1092529_traini_0_inscription","dependent_values":[""]}},{"image":"","label":"Pending Approval","used":false,"reference":false,"rawLabel":"Pending Approval","selected":false,"missing":false,"value":"60","parameters":{"name":"x_1092529_traini_0_inscription","dependent_values":[""]}},{"image":"","label":"Rejected","used":false,"reference":false,"rawLabel":"Rejected","selected":false,"missing":false,"value":"62","parameters":{"name":"x_1092529_traini_0_inscription","dependent_values":[""]}}],"usedInstances":{"84d1545e-8734-44f1-87a9-2a503ff9eb25":["condition"]}},{"name":"subflow.inscription","label":"Input➛Inscription","reference":"x_1092529_traini_0_inscription","reference_display":"Inscription","type":"reference","base_type":"reference","column_name":"","usedInstances":{},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"0841a248-6792-4788-a879-172b907b4e99","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.inscription.training_schedule.remaining_vacancies","label":"Input➛Inscription➛Training Schedule➛Remaining Vacancies","reference":"","reference_display":"Remaining Vacancies","type":"integer","base_type":"integer","parent_table_name":"x_1092529_traini_0_training_schedule","column_name":"remaining_vacancies","usedInstances":{}},{"name":"subflow.inscription.training_schedule.vacancies","label":"Input➛Inscription➛Training Schedule➛Vacancies (total)","reference":"","reference_display":"Vacancies (total)","type":"integer","base_type":"integer","parent_table_name":"x_1092529_traini_0_training_schedule","column_name":"vacancies","usedInstances":{"779b65dd-7b7d-483b-9385-b53f302a300d":["totalvacancies-0"]}},{"name":"subflow.inscription.manually_added_by_admin","label":"Input➛Inscription➛Manually Added By Admin","reference":"","reference_display":"Manually Added By Admin","type":"boolean","base_type":"boolean","parent_table_name":"x_1092529_traini_0_inscription","column_name":"manually_added_by_admin","usedInstances":{"1415b4f3-ddbf-4556-8f1a-c75bf5863eaf":["condition"]}},{"name":"flow_variable.remainingvacancies","label":"Flow Variables➛remainingVacancies","reference":"","reference_display":"","type":"integer","base_type":"integer","usedInstances":{"1415b4f3-ddbf-4556-8f1a-c75bf5863eaf":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"2421e86d-fdcc-4063-babc-393b0e8c776b"}}]</label_cache>
+        <master_snapshot>82c76a70c3a87610c9043eec05013133</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Update vacancies remaining</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 09:30:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a855e27cc3687610c9043eec05013128</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>Update vacancies remaining</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name>sys_hub_flow_a855e27cc3687610c9043eec05013128</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:52:00</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=a855e27cc3687610c9043eec05013128"/>
+    <sys_variable_value action="delete_multiple" query="document_key=a855e27cc3687610c9043eec05013128"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=a855e27cc3687610c9043eec05013128"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=a855e27cc3687610c9043eec05013128^sys_idNOT INa455e27cc3687610c9043eec05013129"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>a855e27cc3687610c9043eec05013128</id>
+        <name>Update vacancies remaining</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 09:30:16</sys_created_on>
+        <sys_id>a455e27cc3687610c9043eec05013129</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 09:30:16</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=a455e27cc3687610c9043eec05013129"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=a855e27cc3687610c9043eec05013128^sys_idNOT IN7f97e2fcc3687610c9043eec050131c2"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=0841a248-6792-4788-a879-172b907b4e99</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_1092529_traini_0_inscription</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>inscription</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Inscription</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</model>
+        <model_id>a855e27cc3687610c9043eec05013128</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_a855e27cc3687610c9043eec05013128</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_1092529_traini_0_inscription">x_1092529_traini_0_inscription</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 09:40:19</sys_created_on>
+        <sys_id>7f97e2fcc3687610c9043eec050131c2</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:12:22</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=7f97e2fcc3687610c9043eec050131c2"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=a855e27cc3687610c9043eec05013128"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a855e27cc3687610c9043eec05013128"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=a855e27cc3687610c9043eec05013128"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=a855e27cc3687610c9043eec05013128^sys_idNOT IN9eee26b8c3a87610c9043eec050131d8,d2ee26b8c3a87610c9043eec050131de,daee26b8c3a87610c9043eec050131dd"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:10</sys_created_on>
+        <sys_id>9eee26b8c3a87610c9043eec050131d8</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:55:12</sys_updated_on>
+        <ui_id>6144ca1c-8cb4-4696-bf62-a89ff91d0e21</ui_id>
+        <values>H4sIAAAAAAAA/+VX22rjMBD9layfg7Fz6+VtaSkUeoG29KXbFbIlJ2IV2SvJuTTk33dkyY43cbsJONCyj5oZac6cmSPLLyuPEe/cO00GQYDD4elJEPT7QTAa9WMcRlF/FEdBNIi8rifwlEKkxhGnsJxhnpv1AoXBWW/YO0NaYiYYChATKpYs0ywVEEiYyjhePrv467+c8YRxIqnwzl9eu16GJSTRVHrnqy3Xvig5jiiH0CcHcwu1XmbVEhU+a7upb+vcWUcqiYESdD260FQQChgSzBXtelMsCNapXFYWSTG5F3xjmDCh4UTPBC8Ue4O8p4GJSyhUFVPrq5bI8WTNySXW+FHLPNa5dKHxJGUxVZYPQhOcc31Rt9mAe8ttscWWbXenPJ+KO0uHVx1QtgUsuQIQNDOFGuSujORxks4fSpRXTBScOCdPY8yrFdZasijXBs/Ko5xO4SA0xVnGxBhlMp2xYjNgmfpjDgs/4ekckio2Fj6ODXAfeMX+FdgvC/MzlsxUcQvHwGYAxDhMCLItVGkuCypnKOa5KhwSC2XP8tZdTy3VBcdKbSoHytHv3OC2PLiKkSXNbCkG9DscMaOuuHV3L6EMg83IxakgzKBQNbUojTX99iOHzWTU+2klA+SoeEJJzqn1rFYqjww1fk1K/k7wer0rr/YTtCnRgp9Sohd1gppIc2Ldsd00HeDEGrYmVqjjK8kVkn8+tR6uP0vBP0QYn3w4ZMPNPKlUamS5rKlwVzYHz/keEMo5vzeT2YmW76FyY54wyknTN+nKOLa+Sb3/85v0KYccABFku8cEZ6J4YADQY01/8PEVe7Y1Z8V41b5AxoZVvKsB3NFp5+1gJewBp1TCI+TuPFk8DRDL+74Yme27vjQ6AfRbE0C/144AVlWZFZENnJdvStPNMv7NxOPteBjB2oZw3SSwg3KGh+bsrXcF3D9IwfVhs57Ld2au5cfnO4rsHvMKmMBWlw9Z/aI5I2OqN9nLKJLqOea/mvxu4lDZqKK8IzxkBx/KdhRuJApKQZIqaF79JRvC82j3Dgl9az7sCtkDS0nHLV50HiowjQjdNQJKp+OiN/V75LqyuiEftPhg/LRf0rJZjRose/Yl/v/aE8LrH7sRzAf8EAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>17277de9-38aa-41ab-97bd-e3c2f1209bf4</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:10</sys_created_on>
+        <sys_id>d2ee26b8c3a87610c9043eec050131de</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:55:12</sys_updated_on>
+        <ui_id>86044473-c1a0-4427-9832-2a3faf4bd2c3</ui_id>
+        <values>H4sIAAAAAAAA/+VWTW8TMRD9K5aPJWx3k7ai4VRRKpCAShT1QtDKa88mRl7vYntDQ5T/zvhjt1FblSJxqcgl8tgzfm/mvThft1QKOqdHIPLitDjhs2I2m+b59NVRUZ3MqmIqZgygoBOqWQN40gBvjcD1mqneB7Zb21e1an9mUltuZOdkqzNnmNRSL0vLVyB6Bbsd5ghpO8U21ykVI3wllTCg6fzrtwntmMFbHBg6397ZeipMxSpQePTzgPMubrfp/Fq0vG9Au1IOwQ8p8zztkPfnuINJHk6RTyjcONACEEjNlIUJbZgWzLVmQ+fO9BgwwMSlVpvxxEpqF4k27MbKX3jzUe7P1YDMeGrCuCxTg2K4PmeOXWFl7noz9quVHGzsiYCa9cq92Y/FA5dhCjHFsUoN2a3qG/0pdoSOBfbm0VsEAZ3n6ZFHWvXVqv35eQB5IXVoSaKoWs7UuGLOGVn1zsPZUlAQetywrvNi6Ey7liEZoTTZUuEi89rBO61c6ozxoB7sKssuMH4ewtfMSE/iI5bB5N2E2o19o5i1t1Swh+WP3iOJxBKFMnQhtKAMSvDJQaVneNUaEvDdJBmhOn5MYfz0VlB7NW/NcFMW+en0eHpaRgOUeXnPCfd98CUdIVe3R/7OGE+APRjjS5DDwzSSN+7FPuznkk9xIznj+J8549Vzckai8eyt8SdD5NNHf3L3lBQ8YPfMYKBJ0l8zzjSXYBd9ns9ELV7GK0HcN8MTs/7OH09gMfjjQoIS9gFagzmgQbgOykjzjkHSJrlOm+Pz8c9cUpzk4fOMvPIfvCKRYox5zA+o2IcfS6KHBwt9cHDGcQqWeNyHZ4EI8URIb/0L4VZAalGGSFt9B+4yfDV8AdL01hEDOGVNGAnqzIiveOk1SHTfVPglLWnr2oIj1Ya8KIjU5K0xrSHvUIwqPEIQ2xfArJlU4Ue/DVqwJGmL9B0C6wxC9TkLmi0oYTU6cIDn0+GGoR9gjmgMsavWOBwFJ9HPw0H8ryiXSzAZ7w1Kw2XhoJ/l8G/yta+VmI1VfPBwoX3l2Oy7ZYMicDsbZzGOAnNTubj3Godt2RrEqOHdbvftN+DYczcdCwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment>Add +1 to total vacancies on training schedule</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>1415b4f3-ddbf-4556-8f1a-c75bf5863eaf</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:10</sys_created_on>
+        <sys_id>daee26b8c3a87610c9043eec050131dd</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:55:12</sys_updated_on>
+        <ui_id>b48ab59e-53ac-4ebc-b817-267f71aaebdb</ui_id>
+        <values>H4sIAAAAAAAA/+VWTW/bOBD9KwSPqatIdhI07iloGuwC3QZoglzqQqDIkc2ColR+uPEa/u8dUpRiJIWbAr0EzSXgcGb43vA9U5+3VAo6pycg8uK8OOOzYjab5vn0zUlRnc2qYipmDKCgE6pZA5hpgLdG4HrNlA+B7db6qlbt90xqy43snGx15gyTWuplafkKhFew22GNkLZTbHOXSjHCV1IJA5rOP3+Z0I4ZPMWBofPto63nwlSsAoWpnwacj3G7TRfWouW+Ae1KOQQ/pMrLtEP+vcQdLApwinxC4d6BFoBAaqYsTGjDtGCuNRs6d8ZjwAAT11ptxoyV1K4n2rB7K//Hk0/ykFcDMuNpCOOyTAPqw/Ulc+wGO3PnzTivVnKw/UwE1Mwr924/1idcx1voSxyr1FDdKt/oj/1E6Nhg7z68RRDQBZ4BeU+rvlm13z8NIK+kjiNJFFXLmRpXzDkjK+8CnC0FBXHGDeu6IIbOtGsZixFKky0VLrKgHTzTyqXOGI/qwamy7ArjlzF8x4wMJP7DNli8m1C7se8Us/aBCs6w/OYDkp5YolDGKcQRlFEJoTiq9AKPWkMCvpskI1SnhxTGzx8EtdfzwQz3ZZGfT0+n52VvgDIvnzjhqQ9uUwq5eUj5PWM8A/ZgjNsoh5/TSN54EvuwX0s+9hvJGad/zBlvXpIzEo0Xb41fGSKfHvzJ3VNS9IDdM8Oacaa5BLvweT4TtXjdHwTiqQUO5v6eF56BePDClQQl7E8oDEaABkE6KHtKj8yQNsld2hyfij/miOIsj38vyBd/wYvRU+xjAfOo3bA4lEqPjxb66OiC4+wtCWiPLyJ8EuATb8Mb4FZAalHGSFt9Be4yfBdCA9J464gBvFtNGImazEjoeB2UR7RvKvwnLWnr2oIj1Ya8KojU5L0xrSH/oARVfGagH1oEs2ZSxZ/1NirAkqQo4jsE1hmEGmoWNFtQwmr03QAvlMM9QxfAHNEYYletcXgBnPQuHhLxa1Aul2Ay7g0KwmUxMdzg8L34NvRKzMYuIXi80KEzE+K2dUw9bpw+PUupO+/s4S/QbLwn8ooU2HyYZOr9FlVg2RrEKO7dbvflB9SZzO4iCwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=a855e27cc3687610c9043eec05013128"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=a855e27cc3687610c9043eec05013128^sys_idNOT IN5aee26b8c3a87610c9043eec050131dc,9aee26b8c3a87610c9043eec050131da,a408beb4c3e87610c9043eec050131c1,deee26b8c3a87610c9043eec050131db,e408beb4c3e87610c9043eec050131c0,e808beb4c3e87610c9043eec050131bf"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">16ee26b8c3a87610c9043eec050131dc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:10</sys_created_on>
+        <sys_id>5aee26b8c3a87610c9043eec050131dc</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:51:58</sys_updated_on>
+        <ui_id>1415b4f3-ddbf-4556-8f1a-c75bf5863eaf</ui_id>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K8PPwfijCWveSkdhsK2wlr5snbmW5OQyWfIkOWlm8t93rz+SsKZsjLGnvVlHurrnHN2Du8i2oWmDv7dX3uPKRMtPj7MIDWP03UUGahUtI2GNxIDWFD0wizagW96gT4m+0bB7OCJijVo6Nd7WgKOaoFy07H7aCrtGFRpKpanwLjg0KypHSasqgSq9FKnIs0WeJUn2+iItF3mZZjIHBTmdmwqvJ3Kv3vXI7EXW3I9wP3WyTjKtNJlF6ikoIxW1rkB7NYtqMBKCdbsD4hTIW6OPwBpNGBTX8OTxO92dzed8sFKkUYx2HJbFaNXkkkWhbhsmOCABSj1ZaHVbmw+DDjZZVdDqcGJy6+k+1TBpZjFSqu7WdvtxaniDphc4bmorQB9WEMiGsg3K88MorWq6qKihaciconF2g30xcanjlaZFXGm7paY8KTEIJh6TRxDfEP6mhx/AIat4T9dQ8UCzBI+i6KeKrguOJOx7W4pvLRMaBI5SisENOuCFwyZcUZ+NGlnvZ89H8mQau863JZOM0QzVTJFektroXQGSHrgo+aNGs99/bpMkl8znS9f12jYj/dipGtCQERsQYAQqPx4XyfOR/1dt/0auLmFezdNkfj5XF4tzuTqTqJfDlP0iTKz7N7OUJMn/MJ2GCX0xzNeorW/+x1l65OAMHfwwN1IJ9ETknrG301+AN3Y0AChOoa11X1nCEdv/AHtEI8NPBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">12ee26b8c3a87610c9043eec050131da</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</flow>
+        <flow_variables_assigned>totalvacancies</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:10</sys_created_on>
+        <sys_id>9aee26b8c3a87610c9043eec050131da</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:51:58</sys_updated_on>
+        <ui_id>779b65dd-7b7d-483b-9385-b53f302a300d</ui_id>
+        <values>H4sIAAAAAAAA/+1V24rbMBD9Fz0nxmnu+7ZQFgJtF9o0L2UxY2mcDJUlry7JpiH/3pHtZMOW9ge6b9YZac5FI3wSNoYmBr+2997T1oi7H08DQSZh/H0SBmoUdyLYAHoPEowk9GIg9qBjKpxOPpaVtoeMjJeOmkDWZMEBGTLbwssdqqgxu549n/m0It9oOG76JozIHWnlsBfQgGPegE7cnd6UwrHBQkOJmg+uTMAt72LJipfTGeKHWbmQY1jMZ6NcLvPJGFHm03w0HsmK911OtoY2N4b+ZjTxMU5XJutU0pUPBL4ENAqZuQLtcSBqMAqCdccr4hDUo9GvwI4bdY5rePH0i3tP8rSvQrYo+zSuy6JP6hKSJYmPbcYdEqDUlwStjrX50tlIGWMFUYebjKPnftgkzUlEr6j6trOHrxfCBzKtvb6orQR9XUEIjsoYOBi+l0jrt9l00Kc/bgc11sxZ1NA0aSwaZ/fU8rDsOttqXmRpilhfGsMMZDtHnCZkD4x/bOENOEqGP3Obnu+7oeeIq3T78xHIBajRcDzFfDgplRwu09dMlQBqPl+WqhTnNtziOSZbXUx9IEWXKW/o5vieJeyx935+SiPfsXcPox24f8zN+wN5fyD/2QNRKMmzqnWSsLr8Q1LhyMND8hY6WPcz+XnFzr8B8TNe2I0GAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6008beb4c3e87610c9043eec050131c1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>17277de9-38aa-41ab-97bd-e3c2f1209bf4</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:51:55</sys_created_on>
+        <sys_id>a408beb4c3e87610c9043eec050131c1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:51:59</sys_updated_on>
+        <ui_id>d161dfee-9441-4648-81e8-e1bd8e0ec299</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9aee26b8c3a87610c9043eec050131db</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</flow>
+        <flow_variables_assigned>remainingvacancies</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:10</sys_created_on>
+        <sys_id>deee26b8c3a87610c9043eec050131db</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:51:58</sys_updated_on>
+        <ui_id>0e0c2a77-7235-4e6b-9ca0-5e65cb1506a0</ui_id>
+        <values>H4sIAAAAAAAA/+1WTW8aMRD9K5aPKWwWlhJCTkht1EhtIzVpLiVaeb2z4MZrb/xBQiP+e8f7RUSr9NoDJ9bP4zdvnscjXqj2rvLO3uqFtWKl6PzH/YAKFTD8fqGKlUDn1EDJhBJqtWGcKS7A0gHdMOnDJn7mwlaSbe/2CF8LmRtoGStmkMiBofOXgy23rSCVLAOJB6+UgxVGoYYcl/kYYDzNZjxhs7PpKObn8SQB4PH7eJSM8gTjupO9wrtXCt9SH/LinugzapMHffGAwrMDlQMqKJi0MKAlUzlz2mx7xADLr5XcA2skaiov2bMVv5B7Eoe4ArBU3rrSL9PWsc4sLThcV05o1SCOZbJzUktfqq9NKcFrKJiX7pXX3iIfVEFzENEqKm7W+ulbl/BSqLq8dlNqzmS/Ys4ZkXmHxuD9eHF76E0Dff7jlkBCiTnTklUV+ptWRm9EnQdll9FK4iIqpH5CfaG/IsZDjRG6yaJLxD/U8B0zIhT8BWnafN+VePRwFbpgPBmPYDbNh0XO+XAST5NhxjI+TM6TLIYZPzubZnRXm5s++lBWY1NrSNp4igGWG1G5BUrYYHnOeOiwUPZfugTRt87Q05OlOjlZcA7WklDO6aKuj4T6iLdIRtwaSJGnNaKzn8BdRG5qAlJ664gB540ijNTPKSKB8Tq0IlG+zPBHWKKLwoIj2Za8GxGhyEdjtCGfsCtlSHEDjau1mA0TMnhJdN1OlrSdRnyFwiqDUsOZJY2WlLAC32QnLxyHZ1ZWEuaoxhC71sbhDXGy9HGc5F1ghN2ywgaIuDfYXC6qA8MV13Vh1ovA1VbWswTwdKkCc+/1IXPdKxgROe2Y7G+CDPuIdJSmUuuH1FepAY6v1kZce+WQvs3Ys1/Q3W53HyZV01/NTKtHyz+mw3G2HWfbcbYdZ9v/P9ty4MKirNtgzFX3zy1sbHFECP4aetLmIajYY7vf19lfPQMKAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a008beb4c3e87610c9043eec050131c0</block>
+        <comment/>
+        <connected_to>1415b4f3-ddbf-4556-8f1a-c75bf5863eaf</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:51:55</sys_created_on>
+        <sys_id>e408beb4c3e87610c9043eec050131c0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:51:59</sys_updated_on>
+        <ui_id>17277de9-38aa-41ab-97bd-e3c2f1209bf4</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6008beb4c3e87610c9043eec050131bf</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>1415b4f3-ddbf-4556-8f1a-c75bf5863eaf</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:51:55</sys_created_on>
+        <sys_id>e808beb4c3e87610c9043eec050131bf</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:51:59</sys_updated_on>
+        <ui_id>104ef13d-a6cd-4c3a-84d0-2d5ba04523d6</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=a855e27cc3687610c9043eec05013128"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=a855e27cc3687610c9043eec05013128^sys_idNOT IN56ee26b8c3a87610c9043eec050131cf,d2ee26b8c3a87610c9043eec050131d3"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=71ac8ad1-35e0-4bdc-95e0-6dbaad779bdb</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>totalvacancies</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>totalVacancies</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</model>
+        <model_id>a855e27cc3687610c9043eec05013128</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_a855e27cc3687610c9043eec05013128</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:10</sys_created_on>
+        <sys_id>56ee26b8c3a87610c9043eec050131cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:12:10</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=2421e86d-fdcc-4063-babc-393b0e8c776b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>remainingvacancies</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>remainingVacancies</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</model>
+        <model_id>a855e27cc3687610c9043eec05013128</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_a855e27cc3687610c9043eec05013128</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:10</sys_created_on>
+        <sys_id>d2ee26b8c3a87610c9043eec050131d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:12:10</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_a855e27cc3687610c9043eec05013128^sys_idNOT IN44a7e2fcc3687610c9043eec050131c7"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>inscription</element>
+        <help/>
+        <hint/>
+        <label>Inscription</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a855e27cc3687610c9043eec05013128</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 09:40:20</sys_created_on>
+        <sys_id>44a7e2fcc3687610c9043eec050131c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 09:40:20</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_a855e27cc3687610c9043eec05013128"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_a855e27cc3687610c9043eec05013128"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_a855e27cc3687610c9043eec05013128"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Used to calculate and update vacancies spots</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>update_vacancies_remaining</internal_name>
+        <label_cache>[{"name":"subflow.admin_added","label":"Input➛admin_added","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","usedInstances":{"053cb89c-5651-4133-92b8-ff64d6cec544":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"0211ad72-3f51-42f7-949d-df4e104bddea"}},{"name":"subflow.inscription.training_schedule","label":"Input➛Inscription➛Training Schedule","reference":"x_1092529_traini_0_training_schedule","reference_display":"Training Schedule","type":"reference","base_type":"reference","parent_table_name":"x_1092529_traini_0_inscription","column_name":"training_schedule","usedInstances":{"303a03b5-3c78-40ff-9977-86a40e0f54c0":["record"],"86044473-c1a0-4427-9832-2a3faf4bd2c3":["record"],"6144ca1c-8cb4-4696-bf62-a89ff91d0e21":["conditions"],"b48ab59e-53ac-4ebc-b817-267f71aaebdb":["record"]}},{"name":"subflow.inscription.state","label":"Input➛Inscription➛State","reference":"","reference_display":"State","type":"choice","base_type":"choice","parent_table_name":"x_1092529_traini_0_inscription","column_name":"state","choices":[{"image":"","label":"Approved","used":false,"reference":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"61","parameters":{"name":"x_1092529_traini_0_inscription","dependent_values":[""]}},{"image":"","label":"Pending Approval","used":false,"reference":false,"rawLabel":"Pending Approval","selected":false,"missing":false,"value":"60","parameters":{"name":"x_1092529_traini_0_inscription","dependent_values":[""]}},{"image":"","label":"Rejected","used":false,"reference":false,"rawLabel":"Rejected","selected":false,"missing":false,"value":"62","parameters":{"name":"x_1092529_traini_0_inscription","dependent_values":[""]}}],"usedInstances":{"84d1545e-8734-44f1-87a9-2a503ff9eb25":["condition"]}},{"name":"subflow.inscription","label":"Input➛Inscription","reference":"x_1092529_traini_0_inscription","reference_display":"Inscription","type":"reference","base_type":"reference","column_name":"","usedInstances":{},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"0841a248-6792-4788-a879-172b907b4e99","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.inscription.training_schedule.remaining_vacancies","label":"Input➛Inscription➛Training Schedule➛Remaining Vacancies","reference":"","reference_display":"Remaining Vacancies","type":"integer","base_type":"integer","parent_table_name":"x_1092529_traini_0_training_schedule","column_name":"remaining_vacancies","usedInstances":{}},{"name":"subflow.inscription.training_schedule.vacancies","label":"Input➛Inscription➛Training Schedule➛Vacancies (total)","reference":"","reference_display":"Vacancies (total)","type":"integer","base_type":"integer","parent_table_name":"x_1092529_traini_0_training_schedule","column_name":"vacancies","usedInstances":{"779b65dd-7b7d-483b-9385-b53f302a300d":["totalvacancies-0"]}},{"name":"subflow.inscription.manually_added_by_admin","label":"Input➛Inscription➛Manually Added By Admin","reference":"","reference_display":"Manually Added By Admin","type":"boolean","base_type":"boolean","parent_table_name":"x_1092529_traini_0_inscription","column_name":"manually_added_by_admin","usedInstances":{"1415b4f3-ddbf-4556-8f1a-c75bf5863eaf":["condition"]}},{"name":"flow_variable.remainingvacancies","label":"Flow Variables➛remainingVacancies","reference":"","reference_display":"","type":"integer","base_type":"integer","usedInstances":{"1415b4f3-ddbf-4556-8f1a-c75bf5863eaf":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"2421e86d-fdcc-4063-babc-393b0e8c776b"}}]</label_cache>
+        <master>true</master>
+        <name>Update vacancies remaining</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 09:41:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>82c76a70c3a87610c9043eec05013133</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:52:00</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=82c76a70c3a87610c9043eec05013133"/>
+    <sys_variable_value action="delete_multiple" query="document_key=82c76a70c3a87610c9043eec05013133"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=82c76a70c3a87610c9043eec05013133"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=82c76a70c3a87610c9043eec05013133^sys_idNOT IN82c76a70c3a87610c9043eec05013134"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>82c76a70c3a87610c9043eec05013133</id>
+        <name>Update vacancies remaining</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 09:41:01</sys_created_on>
+        <sys_id>82c76a70c3a87610c9043eec05013134</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 09:41:01</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=82c76a70c3a87610c9043eec05013134"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=82c76a70c3a87610c9043eec05013133^sys_idNOT IN42c76a70c3a87610c9043eec05013135"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=0841a248-6792-4788-a879-172b907b4e99</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_1092529_traini_0_inscription</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>inscription</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Inscription</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</model>
+        <model_id>82c76a70c3a87610c9043eec05013133</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_82c76a70c3a87610c9043eec05013133</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_1092529_traini_0_inscription">x_1092529_traini_0_inscription</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 09:41:01</sys_created_on>
+        <sys_id>42c76a70c3a87610c9043eec05013135</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 09:41:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=42c76a70c3a87610c9043eec05013135"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=82c76a70c3a87610c9043eec05013133"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=82c76a70c3a87610c9043eec05013133"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=82c76a70c3a87610c9043eec05013133"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=82c76a70c3a87610c9043eec05013133^sys_idNOT IN461f6ab8c3a87610c9043eec05013130,4e1f6ab8c3a87610c9043eec0501312f,8e1f6ab8c3a87610c9043eec0501312e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>17277de9-38aa-41ab-97bd-e3c2f1209bf4</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:58</sys_created_on>
+        <sys_id>461f6ab8c3a87610c9043eec05013130</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:52:00</sys_updated_on>
+        <ui_id>86044473-c1a0-4427-9832-2a3faf4bd2c3</ui_id>
+        <values>H4sIAAAAAAAA/+VWTW8TMRD9K5aPJWx3k7ai4VRRKpCAShT1QtDKa88mRl7vYntDQ5T/zvhjt1FblSJxqcgl8tgzfm/mvThft1QKOqdHIPLitDjhs2I2m+b59NVRUZ3MqmIqZgygoBOqWQN40gBvjcD1mqneB7Zb21e1an9mUltuZOdkqzNnmNRSL0vLVyB6Bbsd5ghpO8U21ykVI3wllTCg6fzrtwntmMFbHBg6397ZeipMxSpQePTzgPMubrfp/Fq0vG9Au1IOwQ8p8zztkPfnuINJHk6RTyjcONACEEjNlIUJbZgWzLVmQ+fO9BgwwMSlVpvxxEpqF4k27MbKX3jzUe7P1YDMeGrCuCxTg2K4PmeOXWFl7noz9quVHGzsiYCa9cq92Y/FA5dhCjHFsUoN2a3qG/0pdoSOBfbm0VsEAZ3n6ZFHWvXVqv35eQB5IXVoSaKoWs7UuGLOGVn1zsPZUlAQetywrvNi6Ey7liEZoTTZUuEi89rBO61c6ozxoB7sKssuMH4ewtfMSE/iI5bB5N2E2o19o5i1t1Swh+WP3iOJxBKFMnQhtKAMSvDJQaVneNUaEvDdJBmhOn5MYfz0VlB7NW/NcFMW+en0eHpaRgOUeXnPCfd98CUdIVe3R/7OGE+APRjjS5DDwzSSN+7FPuznkk9xIznj+J8549Vzckai8eyt8SdD5NNHf3L3lBQ8YPfMYKBJ0l8zzjSXYBd9ns9ELV7GK0HcN8MTs/7OH09gMfjjQoIS9gFagzmgQbgOykjzjkHSJrlOm+Pz8c9cUpzk4fOMvPIfvCKRYox5zA+o2IcfS6KHBwt9cHDGcQqWeNyHZ4EI8URIb/0L4VZAalGGSFt9B+4yfDV8AdL01hEDOGVNGAnqzIiveOk1SHTfVPglLWnr2oIj1Ya8KIjU5K0xrSHvUIwqPEIQ2xfArJlU4Ue/DVqwJGmL9B0C6wxC9TkLmi0oYTU6cIDn0+GGoR9gjmgMsavWOBwFJ9HPw0H8ryiXSzAZ7w1Kw2XhoJ/l8G/yta+VmI1VfPBwoX3l2Oy7ZYMicDsbZzGOAnNTubj3Godt2RrEqOHdbvftN+DYczcdCwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment>Add +1 to total vacancies on training schedule</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>1415b4f3-ddbf-4556-8f1a-c75bf5863eaf</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:58</sys_created_on>
+        <sys_id>4e1f6ab8c3a87610c9043eec0501312f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:12:58</sys_updated_on>
+        <ui_id>b48ab59e-53ac-4ebc-b817-267f71aaebdb</ui_id>
+        <values>H4sIAAAAAAAA/+VWTW/bOBD9KwSPqatIdhI07iloGuwC3QZoglzqQqDIkc2ColR+uPEa/u8dUpRiJIWbAr0EzSXgcGb43vA9U5+3VAo6pycg8uK8OOOzYjab5vn0zUlRnc2qYipmDKCgE6pZA5hpgLdG4HrNlA+B7db6qlbt90xqy43snGx15gyTWuplafkKhFew22GNkLZTbHOXSjHCV1IJA5rOP3+Z0I4ZPMWBofPto63nwlSsAoWpnwacj3G7TRfWouW+Ae1KOQQ/pMrLtEP+vcQdLApwinxC4d6BFoBAaqYsTGjDtGCuNRs6d8ZjwAAT11ptxoyV1K4n2rB7K//Hk0/ykFcDMuNpCOOyTAPqw/Ulc+wGO3PnzTivVnKw/UwE1Mwr924/1idcx1voSxyr1FDdKt/oj/1E6Nhg7z68RRDQBZ4BeU+rvlm13z8NIK+kjiNJFFXLmRpXzDkjK+8CnC0FBXHGDeu6IIbOtGsZixFKky0VLrKgHTzTyqXOGI/qwamy7ArjlzF8x4wMJP7DNli8m1C7se8Us/aBCs6w/OYDkp5YolDGKcQRlFEJoTiq9AKPWkMCvpskI1SnhxTGzx8EtdfzwQz3ZZGfT0+n52VvgDIvnzjhqQ9uUwq5eUj5PWM8A/ZgjNsoh5/TSN54EvuwX0s+9hvJGad/zBlvXpIzEo0Xb41fGSKfHvzJ3VNS9IDdM8Oacaa5BLvweT4TtXjdHwTiqQUO5v6eF56BePDClQQl7E8oDEaABkE6KHtKj8yQNsld2hyfij/miOIsj38vyBd/wYvRU+xjAfOo3bA4lEqPjxb66OiC4+wtCWiPLyJ8EuATb8Mb4FZAalHGSFt9Be4yfBdCA9J464gBvFtNGImazEjoeB2UR7RvKvwnLWnr2oIj1Ya8KojU5L0xrSH/oARVfGagH1oEs2ZSxZ/1NirAkqQo4jsE1hmEGmoWNFtQwmr03QAvlMM9QxfAHNEYYletcXgBnPQuHhLxa1Aul2Ay7g0KwmUxMdzg8L34NvRKzMYuIXi80KEzE+K2dUw9bpw+PUupO+/s4S/QbLwn8ooU2HyYZOr9FlVg2RrEKO7dbvflB9SZzO4iCwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:58</sys_created_on>
+        <sys_id>8e1f6ab8c3a87610c9043eec0501312e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:12:58</sys_updated_on>
+        <ui_id>6144ca1c-8cb4-4696-bf62-a89ff91d0e21</ui_id>
+        <values>H4sIAAAAAAAA/+VX22rjMBD9layfg7Fz6+VtaSkUeoG29KXbFbIlJ2IV2SvJuTTk33dkyY43cbsJONCyj5oZac6cmSPLLyuPEe/cO00GQYDD4elJEPT7QTAa9WMcRlF/FEdBNIi8rifwlEKkxhGnsJxhnpv1AoXBWW/YO0NaYiYYChATKpYs0ywVEEiYyjhePrv467+c8YRxIqnwzl9eu16GJSTRVHrnqy3Xvig5jiiH0CcHcwu1XmbVEhU+a7upb+vcWUcqiYESdD260FQQChgSzBXtelMsCNapXFYWSTG5F3xjmDCh4UTPBC8Ue4O8p4GJSyhUFVPrq5bI8WTNySXW+FHLPNa5dKHxJGUxVZYPQhOcc31Rt9mAe8ttscWWbXenPJ+KO0uHVx1QtgUsuQIQNDOFGuSujORxks4fSpRXTBScOCdPY8yrFdZasijXBs/Ko5xO4SA0xVnGxBhlMp2xYjNgmfpjDgs/4ekckio2Fj6ODXAfeMX+FdgvC/MzlsxUcQvHwGYAxDhMCLItVGkuCypnKOa5KhwSC2XP8tZdTy3VBcdKbSoHytHv3OC2PLiKkSXNbCkG9DscMaOuuHV3L6EMg83IxakgzKBQNbUojTX99iOHzWTU+2klA+SoeEJJzqn1rFYqjww1fk1K/k7wer0rr/YTtCnRgp9Sohd1gppIc2Ldsd00HeDEGrYmVqjjK8kVkn8+tR6uP0vBP0QYn3w4ZMPNPKlUamS5rKlwVzYHz/keEMo5vzeT2YmW76FyY54wyknTN+nKOLa+Sb3/85v0KYccABFku8cEZ6J4YADQY01/8PEVe7Y1Z8V41b5AxoZVvKsB3NFp5+1gJewBp1TCI+TuPFk8DRDL+74Yme27vjQ6AfRbE0C/144AVlWZFZENnJdvStPNMv7NxOPteBjB2oZw3SSwg3KGh+bsrXcF3D9IwfVhs57Ld2au5cfnO4rsHvMKmMBWlw9Z/aI5I2OqN9nLKJLqOea/mvxu4lDZqKK8IzxkBx/KdhRuJApKQZIqaF79JRvC82j3Dgl9az7sCtkDS0nHLV50HiowjQjdNQJKp+OiN/V75LqyuiEftPhg/LRf0rJZjRose/Yl/v/aE8LrH7sRzAf8EAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=82c76a70c3a87610c9043eec05013133"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=82c76a70c3a87610c9043eec05013133^sys_idNOT IN021f6ab8c3a87610c9043eec05013133,061f6ab8c3a87610c9043eec05013132,b108feb4c3e87610c9043eec0501318b,b908feb4c3e87610c9043eec0501318c,bd08feb4c3e87610c9043eec0501318b,c21f6ab8c3a87610c9043eec05013131"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">16ee26b8c3a87610c9043eec050131dc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:58</sys_created_on>
+        <sys_id>021f6ab8c3a87610c9043eec05013133</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:52:00</sys_updated_on>
+        <ui_id>1415b4f3-ddbf-4556-8f1a-c75bf5863eaf</ui_id>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8lYJnQdAjNprcAgcBCqQN0AS5tKmwoiibKEWqfNhRBf97lyL9QOKiDVr01Js45O7OjHfgkShne2fNvbo0hi8lufj0mBAuPYbfI5HQMXJBqJINt1zJagISsgbh/AV+Ntz0AoaHA0JXXDSaxW49aKyxTJOL8dkVb7CgzaDNz2lOy2JeFllWvD3L63lZ50VTAoMSGwqomcCnix2NNzcTkvyUnx16jxuruVzG803scrcDlW48qzxLCHuyTDYM+bQgDEtIB7IBq/SwRzSD5laKA7Di0gbBHTwZ/h0HFrOZf9gylEijG/tjFZ0KcHsFFpCKo9bpvXGKU2aCOQ1rwQm7OMbCg9veSw0lFmqxq1bCdfJDcITsGxz9MM4gCdZ7pZ561NHerdTm447lNZeTK/FSKApifwKL3tXOej4jYYJ12KjqoO/R0arXas2nYuTSpUuBh7QVaoND/XalQD3xFI2F9Brxqwl+AM29ivfYBosDzRoMp9W0idgObWJkmxAzmIUAYw4i0d3qm/MUg+Qorgr++BKqeW8vcfKaRR3b5OViH+30OBpXe9opl6Hak8aFwDFiqKDBPalq/9Fxud1+dllWNp7hl3Gc1K6joFSzDrhEa9ZAQVLOTHxOs5fB+VdjX5fOc5i1szybnU7n2fxUOk/k8pWRLH4RSS/7NxOZZdn/SP5xJLmpwk5GbdPwv5jIRx+/MHPvNeUGqd177N3uH8lfDLhcnB5DG6W/elEHbPsDjFCZ99sGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9aee26b8c3a87610c9043eec050131db</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</flow>
+        <flow_variables_assigned>remainingvacancies</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:58</sys_created_on>
+        <sys_id>061f6ab8c3a87610c9043eec05013132</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:52:00</sys_updated_on>
+        <ui_id>0e0c2a77-7235-4e6b-9ca0-5e65cb1506a0</ui_id>
+        <values>H4sIAAAAAAAA/+1W227aQBD9ldU+puAYnBJCnlDSqJHaRippXkpkrddj2Ga96+6FhCL+vbO2MYhW+QKesM/OnjlzZjxiQ7V3lXf2UU+tFQtFJz+fe1SogOHzhoqcTijtUcVKwCcDJRNKqMWKcaa4AItnKyY9NGG5sJVk66c9wpdC5gZa5ooZJHJg6GRzdFRnyocAw1E25gkbX44GMb+KLxIAHn+MB8kgT5BQsgzkoZSnAynvyXTrKpwJ5WCBAhrgS8t236Ha5EFe3KPw5kDlgLoKJi30aMlUzpw26w4xwPIHJffAEumbwkv2ZsUfzHgRh7gCsFLemtK9pq1hDVzcMsdmznjuvOn804KDbTzKoWBeuptDrAl4qJzQqrniWCZ3t7X0pfrWuEI7goP+eIsioAqFBuVtGcVsqV+/71TeCVV70h5KzZns3phzRmTeBT0b6sXjsc0N9K/RIKHEnGnJqgpblVZGr0SdB2WX0ULiS1RI/Yr6wmxGjIcaI2wBi+4Qv63hJ2ZEKPgr0rT5fijx28N9GKjhxXAA41HeL3LO+xfxKOlnLOP95CrJYhjzy8tRRrc9atf2RjJr91Zhj9LfPhTaGNdalDYuhyvciMpNUdQKr2DXYIcFI/4zgoi+d4een83V2dmUY2stCQWeT+uKSaiYeItkxC2BFHlaIzr7BdxFZFYTkNJbRwzg6CjCSP1RRiQwPoSJJsqXGf4IS3RRWHAkW5MPAyIU+WSMNuQzDrcMKWbQ+FyLWTEhg7tE1wNmSTuwxFcorDIoNdyZ02hOCSvwy97JC9fhjZWVhAmqMcQutXHYM07mPo6TfBcY4fwscCQi7g2Om4vqwND0ui7Meh242so6lgCez1Vg7rw+Zq6nByMipx2TXSdIv4tIB2kqtX5JfZUa4Pjx24hrrxzStxk79mu63W6fw75rJu60IU8b8rQhTxvytCGPN2QOXFiU9RiMud/9mwwHa9w/gh9Cr9q8BBV7bPsXbst76pcKAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6008beb4c3e87610c9043eec050131bf</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>1415b4f3-ddbf-4556-8f1a-c75bf5863eaf</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:51:59</sys_created_on>
+        <sys_id>b108feb4c3e87610c9043eec0501318b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:52:00</sys_updated_on>
+        <ui_id>104ef13d-a6cd-4c3a-84d0-2d5ba04523d6</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6008beb4c3e87610c9043eec050131c1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>17277de9-38aa-41ab-97bd-e3c2f1209bf4</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:51:59</sys_created_on>
+        <sys_id>b908feb4c3e87610c9043eec0501318c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:52:00</sys_updated_on>
+        <ui_id>d161dfee-9441-4648-81e8-e1bd8e0ec299</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a008beb4c3e87610c9043eec050131c0</block>
+        <comment/>
+        <connected_to>1415b4f3-ddbf-4556-8f1a-c75bf5863eaf</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:51:59</sys_created_on>
+        <sys_id>bd08feb4c3e87610c9043eec0501318b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:52:00</sys_updated_on>
+        <ui_id>17277de9-38aa-41ab-97bd-e3c2f1209bf4</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">12ee26b8c3a87610c9043eec050131da</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</flow>
+        <flow_variables_assigned>totalvacancies</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:58</sys_created_on>
+        <sys_id>c21f6ab8c3a87610c9043eec05013131</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:52:00</sys_updated_on>
+        <ui_id>779b65dd-7b7d-483b-9385-b53f302a300d</ui_id>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9LzonhrN851a0KBCgW4E1y2UoAlqiE6Gy5OojaWbkv4+yHSdoseNuuUmPJvneEwlXzARfBu9W5s45udVs8fu1x6SOGJ0rJgVbMNZjGgqkkzce1B44aC7REb4HFWKgqlzIcmUOidSOW1l6aXTiLUgt9Xbj+A5FUJh0uacTZQvpSgXHdVuEEL6TSlhsiZRgqa9HyxbVp1BNbDxB/DbJZnwIs+lkkPJ5Ohoi8nScDoYDnlNBBRmqM/P1FfN/KfLHMuJSe9xS4wZ4aqssO9RYEWmlPYYfHrVA4pODcthjBWgB3thjh1gE8azVBdhR+UZwAR9O/qGOozR+lyMp5K0Z3XXTGtXA+QN4ePE2cB9s55uRHF3jjcAcgvL311jzwXP9Lk2Kh0yds40Khf7ROMK6AlfvEhyRwDIKjcxbGfnLzhx+nlk+Sl170gaV4aC6G3hvZRZ85FOxIFefbW6gr0ajwoJ6bgooyzhKpTV7Wfch2kWyVXRJ4uQRvzjCCfB69ugJIHkk/KGG12BlFPydyrT9fmn5HnAZB2k6AD4DMegPx5j2R5ng/Xk8TUQGIKbTeSYyduoxd3T3Cpy7WEVvtHkPUWhjXGvRpnE5ptTbcEek9ti6cXqNi9Pwua3Zbc1ua/bf1kwgl454riKp5fm/FgNHmkzJr6GDsW9R4QU7/QVJk4ZbIQcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=82c76a70c3a87610c9043eec05013133"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=82c76a70c3a87610c9043eec05013133^sys_idNOT IN461f6ab8c3a87610c9043eec05013129,ce1f6ab8c3a87610c9043eec05013125"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=2421e86d-fdcc-4063-babc-393b0e8c776b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>remainingvacancies</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>remainingVacancies</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</model>
+        <model_id>82c76a70c3a87610c9043eec05013133</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_82c76a70c3a87610c9043eec05013133</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:58</sys_created_on>
+        <sys_id>461f6ab8c3a87610c9043eec05013129</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:12:58</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=71ac8ad1-35e0-4bdc-95e0-6dbaad779bdb</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>totalvacancies</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>totalVacancies</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Update vacancies remaining">82c76a70c3a87610c9043eec05013133</model>
+        <model_id>82c76a70c3a87610c9043eec05013133</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_82c76a70c3a87610c9043eec05013133</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 10:12:58</sys_created_on>
+        <sys_id>ce1f6ab8c3a87610c9043eec05013125</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:12:58</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_82c76a70c3a87610c9043eec05013133^sys_idNOT INc6c76a70c3a87610c9043eec0501314c"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>inscription</element>
+        <help/>
+        <hint/>
+        <label>Inscription</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_82c76a70c3a87610c9043eec05013133</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 09:41:01</sys_created_on>
+        <sys_id>c6c76a70c3a87610c9043eec0501314c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 09:41:01</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_82c76a70c3a87610c9043eec05013133"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_82c76a70c3a87610c9043eec05013133"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_82c76a70c3a87610c9043eec05013133"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>a855e27cc3687610c9043eec05013128</sys_id>
+        <latest_snapshot>82c76a70c3a87610c9043eec05013133</latest_snapshot>
+        <compiler_build>glide-xanadu-07-02-2024__patch9a-06-23-2025_07-23-2025_2226.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=a855e27cc3687610c9043eec05013128"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=a855e27cc3687610c9043eec05013128^sys_idNOT IN0ac76a70c3a87610c9043eec0501315b"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"0ac76a70c3a87610c9043eec0501315b","name":"plan","plan_signature":null}}</plan>
+        <plan_id display_value="Update vacancies remaining">a855e27cc3687610c9043eec05013128</plan_id>
+        <snapshot>b4c83238c3e87610c9043eec05013142</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-10 09:41:02</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0ac76a70c3a87610c9043eec0501315b</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-10 10:52:00</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>

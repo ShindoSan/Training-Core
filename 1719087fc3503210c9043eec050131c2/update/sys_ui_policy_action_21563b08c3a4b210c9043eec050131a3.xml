@@ -10,19 +10,19 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-10-08 07:29:00</sys_created_on>
         <sys_id>21563b08c3a4b210c9043eec050131a3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>remaining_vacancies</sys_name>
         <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
         <sys_policy/>
         <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
         <sys_update_name>sys_ui_policy_action_21563b08c3a4b210c9043eec050131a3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-08 07:29:00</sys_updated_on>
+        <sys_updated_on>2025-10-10 20:35:56</sys_updated_on>
         <table>x_1092529_traini_0_training_schedule</table>
-        <ui_policy display_value="Mandatory Fields (Training - Instructor - Date - Vacancies) / Read-Only (remaining_vacancies)">1a45bb84c3a4b210c9043eec050131ea</ui_policy>
+        <ui_policy display_value="Mandatory Fields (Training - Instructor - Date - Vacancies) / Read-Only  and hidden (remaining_vacancies)">1a45bb84c3a4b210c9043eec050131ea</ui_policy>
         <value/>
         <value_action>ignore</value_action>
-        <visible>ignore</visible>
+        <visible>false</visible>
     </sys_ui_policy_action>
     <sys_translated_text action="delete_multiple" query="documentkey=21563b08c3a4b210c9043eec050131a3"/>
 </record_update>

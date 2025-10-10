@@ -15,7 +15,7 @@
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>Training onChange</name>
+        <name>Training Schedule onChange</name>
         <order/>
         <published_ref/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
@@ -23,28 +23,118 @@
         return;
     }
     var usrID = g_user.userID;
-    var ga = new GlideAjax('TrainingUtils');
-    ga.addParam('sysparm_name', 'checkScheduleEntry');
-    ga.addParam('sysparm_training_schedule', newValue);
-    ga.addParam('sysparm_userid', usrID);
-    ga.getXMLAnswer(setMessage);
+    // Verifica se o usuário já está registrado no curso
+    var gaScheduleEntry = new GlideAjax('TrainingUtils');
+    gaScheduleEntry.addParam('sysparm_name', 'checkScheduleEntry');
+    gaScheduleEntry.addParam('sysparm_training_schedule', newValue);
+    gaScheduleEntry.addParam('sysparm_userid', usrID);
+    gaScheduleEntry.getXMLAnswer(checkSchdEntry);
+
+    // var gaTrainingEntry = new GlideAjax('TrainingUtils');
+    // gaTrainingEntry.addParam('sysparm_name', 'checkTrainingMaxEntry');
+    // gaTrainingEntry.addParam('sysparm_training_schedule', newValue);
+    // gaTrainingEntry.addParam('sysparm_userid', usrID);
+    // gaTrainingEntry.getXMLAnswer(checkTrngEntry);
+
+
 
     //Type appropriate comment here, and begin script below
 
 }
 
-function setMessage(answer) {
-    var clearvalue; // Stays Undefined
+// Verifica se o usuário já está registrado no curso
+function checkSchdEntry(answer) {
     if (answer) {
         var returneddata = JSON.parse(answer);
-        g_form.setValue("already_registered", "Yes");
-		g_form.showFieldMsg('already_registered', 'Please select a different session.', 'error');
-        g_form.addErrorMessage("You already have a registration with status " + returneddata.state + " for this session.");
+        var alreadyRegistered = returneddata.registered;
+        var trainingElegible = returneddata.training_eligible;
+        var vacanciesElegible = returneddata.vacancies_elegible;
+        var instructorElegible = returneddata.instructor_elegible;
+        var dateElegible = returneddata.date_elegible;
+		var state = returneddata.state;
+        if (alreadyRegistered == "true") {
+            clearFields();
+            alreadyRegisteredFunc(state);
+			g_form.addInfoMessage("already registered: "+g_form.getValue("has_conflict"));
+        }
+        if (trainingElegible == "false") {
+            clearFields();
+            trainingElegibleFunc();
+			g_form.addInfoMessage(g_form.getValue("has_conflict"));
+			g_form.addInfoMessage("trainingElegible: "+g_form.getValue("has_conflict"));
+        }
+        if (vacanciesElegible == "false") {
+            clearFields();
+            vacanciesElegibleFunc();
+			g_form.addInfoMessage("vacanciesElegible: "+g_form.getValue("has_conflict"));
+        }
+        if (instructorElegible == "false") {
+            clearFields();
+            instructorElegibleFunc();
+			g_form.addInfoMessage("instructorElegible: "+g_form.getValue("has_conflict"));
+
+        }
+        if (dateElegible == "false") {
+            clearFields();
+            dateElegibleFunc();
+			g_form.addInfoMessage("dateElegible: "+g_form.getValue("has_conflict"));
+
+        }
+        // if (alreadyRegistered == "true" || trainingElegible == "false" || vacanciesElegible == "false" || instructorElegible == "false" || dateElegible == "false") {
+        //     g_form.setValue("has_conflict", true);
+        // }
+        // if (alreadyRegistered == "false" && trainingElegible == "true" && vacanciesElegible == "true" && instructorElegible == "true" && dateElegible == "true") {
+		// 	g_form.setValue("has_conflict", false);
+        // }
+		else{
+			g_form.setValue("has_conflict", false);
+		}
+
     } else {
-        g_form.setValue("already_registered", "No");
-		g_form.clearMessages();
-		g_form.hideFieldMsg('already_registered');
+        g_form.addInfoMessage("erro na chamada");
     }
+}
+
+function alreadyRegisteredFunc(state) {
+    g_form.setValue("already_registered", "Yes");
+    g_form.showFieldMsg('already_registered', 'Please select a different session.', 'error');
+    g_form.addErrorMessage("You already have a registration with status " + state + " for this session.");
+    g_form.setValue("has_conflict", true);
+}
+
+function trainingElegibleFunc() {
+    g_form.showFieldMsg('training_schedule', 'Please select a different training.', 'error');
+    g_form.addErrorMessage("You already have 3 registrations for the training of this session.");
+    g_form.setValue("has_conflict", true);
+}
+
+function vacanciesElegibleFunc() {	
+    g_form.showFieldMsg('vacancies_left', 'There is no vacancies for this training.', 'error');
+    g_form.addErrorMessage("There is no vacancies left for this training. Please select other session.");
+    g_form.setValue("has_conflict", true);
+}
+
+function instructorElegibleFunc() {
+    g_form.showFieldMsg('instructor', 'Please select a different training.', 'error');
+    g_form.addErrorMessage("You can't be a Student in a training that you are the Instructor.");
+    g_form.setValue("has_conflict", true);
+}
+
+function dateElegibleFunc() {
+    g_form.showFieldMsg('date', 'Today must be prior to this date.', 'error');
+    g_form.addErrorMessage("You can only select training sessions for one day prior to the training schedule date.");
+    g_form.setValue("has_conflict", true);
+}
+
+function clearFields() {
+	//g_form.clearMessages();
+	g_form.setValue("already_registered", "No");
+    g_form.hideFieldMsg('already_registered');
+    g_form.hideFieldMsg('date');
+    g_form.hideFieldMsg('instructor');
+    g_form.hideFieldMsg('vacancies_left');
+    g_form.hideFieldMsg('training_schedule');
+    g_form.setValue("has_conflict", false);
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -52,15 +142,15 @@ function setMessage(answer) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>59cf3024c3ecf210c9043eec050131ca</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_name>Training onChange</sys_name>
+        <sys_mod_count>52</sys_mod_count>
+        <sys_name>Training Schedule onChange</sys_name>
         <sys_overrides/>
         <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
         <sys_policy/>
         <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
         <sys_update_name>catalog_script_client_59cf3024c3ecf210c9043eec050131ca</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-09 15:25:41</sys_updated_on>
+        <sys_updated_on>2025-10-10 21:02:50</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>

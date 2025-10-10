@@ -47,20 +47,88 @@ TrainingUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     checkScheduleEntry: function() {
         var schedule = this.getParameter('sysparm_training_schedule');
         var userId = this.getParameter('sysparm_userid');
+        var registered;
+        var state;
+        var trainingElegible;
+        var vacanciesElegible;
+        var instructorElegible;
+        var dateElegible;
+        var training;
+        var instructorId;
+        var today = new GlideDate();
+        var trainingdate;
+        var vacanciesRemaining = 0;
+
+        var grSchedule = new GlideRecord("x_1092529_traini_0_training_schedule");
+        grSchedule.get(schedule);
+        if (grSchedule) {
+            trainingdate = grSchedule.training_date;
+            vacanciesRemaining = grSchedule.remaining_vacancies;
+            training = grSchedule.training;
+            instructorId = grSchedule.instructor.sys_id;
+        }
 
         var grScheduleEntry = new GlideRecord("x_1092529_traini_0_inscription");
         grScheduleEntry.addEncodedQuery("training_schedule=" + schedule + "^user=" + userId);
         grScheduleEntry.query();
 
+        //--------- Validação #7 ---------
         if (grScheduleEntry.next()) {
-            var results = {
-				"registered": "true",
-                "state": grScheduleEntry.getDisplayValue("state")
-            };
-            return JSON.stringify(results);
+            registered = "true";
+            state = grScheduleEntry.getDisplayValue("state");
         } else {
-            return null;
+            registered = "false";
         }
+
+        //--------- Validação #8 ---------
+        var count = 0;
+        //gs.info("ryuki training pre = " + training);
+        var grInscription = new GlideRecord('x_1092529_traini_0_inscription');
+        grInscription.addQuery('training_schedule.training', training);
+        grInscription.addQuery('user', userId);
+        grInscription.query();
+        while (grInscription.next()) {
+            count = count + 1;
+        }
+        if (count >= 3) {
+            //gs.info("ryuki if training count = " + count);
+            trainingElegible = "false";
+        } else {
+            //gs.info("ryuki else training = " + count);
+            trainingElegible = "true";
+        }
+
+        //--------- Validação #9 ---------
+        if (vacanciesRemaining > 0) {
+            vacanciesElegible = "true";
+        } else if (vacanciesRemaining <= 0) {
+            vacanciesElegible = "false";
+        }
+
+        //--------- Validação 10 ---------
+
+        if (userId == instructorId) {
+            instructorElegible = "false";
+        } else if (userId != instructorId) {
+            instructorElegible = "true";
+        }
+
+        //--------- Validação 11 ---------
+        if (today < trainingdate) {
+            dateElegible = "true";
+        } else {
+            dateElegible = "false";
+        }
+
+        var results = {
+            "registered": registered,
+            "state": state,
+            "training_elegible": trainingElegible,
+            "vacancies_elegible": vacanciesElegible,
+            "instructor_elegible": instructorElegible,
+            "date_elegible": dateElegible
+        };
+        return JSON.stringify(results);
     },
 
     type: 'TrainingUtils'
@@ -69,14 +137,14 @@ TrainingUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-10-09 05:51:59</sys_created_on>
         <sys_id>b489a024c36cf210c9043eec05013121</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>TrainingUtils</sys_name>
         <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
         <sys_update_name>sys_script_include_b489a024c36cf210c9043eec05013121</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-09 15:12:54</sys_updated_on>
+        <sys_updated_on>2025-10-10 13:30:40</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>b489a024c36cf210c9043eec05013121</id>

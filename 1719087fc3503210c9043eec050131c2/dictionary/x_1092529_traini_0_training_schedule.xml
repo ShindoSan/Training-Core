@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="0f7858ffc3903210c9043eec05013136" label="Training Schedule" max_length="40" name="x_1092529_traini_0_training_schedule" type="collection">
         <element label="Instructor" max_length="32" name="instructor" reference="sys_user" reference_qual="javascript: 'sys_idIN' + new TrainingUtils().getGroupMembers('29fb3037c3543210c9043eec050131c0');" type="reference" use_reference_qualifier="advanced"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;var concatenatedName = current.getDisplayValue(&quot;training&quot;) + &quot; - &quot; + current.getDisplayValue(&quot;training_date&quot;);&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return concatenatedName;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Training Name" max_length="100" name="training_name_calculated" type="string" virtual="true"/>
         <element label="Training Date" max_length="40" name="training_date" type="glide_date"/>
-        <element display="true" label="Training" max_length="32" name="training" reference="x_1092529_traini_0_training" type="reference"/>
+        <element display="true" label="Training" max_length="32" name="training" reference="x_1092529_traini_0_training" reference_floats="true" type="reference"/>
         <element label="Remaining Vacancies" max_length="255" name="remaining_vacancies" type="integer"/>
         <element label="Vacancies (total)" max_length="40" name="vacancies" type="integer"/>
         <index name="index">

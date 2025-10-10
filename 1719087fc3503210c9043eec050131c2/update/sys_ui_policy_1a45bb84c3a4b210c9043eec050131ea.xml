@@ -19,22 +19,22 @@
 
 }]]></script_true>
         <set_values/>
-        <short_description>Mandatory Fields (Training - Instructor - Date - Vacancies) / Read-Only (remaining_vacancies)</short_description>
+        <short_description>Mandatory Fields (Training - Instructor - Date - Vacancies) / Read-Only  and hidden (remaining_vacancies)</short_description>
         <sys_class_name>sys_ui_policy</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-10-08 07:25:07</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1a45bb84c3a4b210c9043eec050131ea</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Mandatory Fields (Training - Instructor - Date - Vacancies) / Read-Only (remaining_vacancies)</sys_name>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Mandatory Fields (Training - Instructor - Date - Vacancies) / Read-Only  and hidden (remaining_vacancies)</sys_name>
         <sys_overrides/>
         <sys_package display_value="Training Core" source="x_1092529_traini_0">1719087fc3503210c9043eec050131c2</sys_package>
         <sys_policy/>
         <sys_scope display_value="Training Core">1719087fc3503210c9043eec050131c2</sys_scope>
         <sys_update_name>sys_ui_policy_1a45bb84c3a4b210c9043eec050131ea</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-08 07:29:13</sys_updated_on>
+        <sys_updated_on>2025-10-10 20:35:42</sys_updated_on>
         <table>x_1092529_traini_0_training_schedule</table>
         <ui_type>0</ui_type>
         <view/>
